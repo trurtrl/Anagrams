@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+    <frame10 grid="{'row':'1', 'column':'0', 'columnspan':'3'}"  grid_propagate='0' >
+        <parent>root</parent>
+        <width>800</width>
+        <height>180</height>
+    </frame10>
+    <label10_00 grid="{'row':'0', 'column':'0' , 'padx':'30'}" >
+        <parent>frame10</parent>
+        <font>Arial 12</font>
+        <width>15</width>
+        <height>5</height>
+        <text>Введите cлово</text>
+    </label10_00>
+    <frame10_01 grid="{'row':'0', 'column':'1' }" grid_propagate='0' >
+        <parent>frame10</parent>
+        <width>500</width>
+        <height>10</height>
+    </frame10_01>
+    <entry10_01_1 focus="{}" pack="{}">
+        <parent>frame10_01</parent>
+        <width>25</width>
+        <bd>3</bd>
+        <font>Arial 22</font>
+        <fg>red</fg>
+        <justify>center</justify>
+        <validate>key</validate>
+        <validatecommand>vcmd</validatecommand>
+    </entry10_01_1>
+    <button10_02 grid="{'row':'0', 'column':'2', 'padx':'30'}">
+        <parent>frame10</parent>
+        <text>Начать</text>
+        <bg>darkgreen</bg>
+    </button10_02>
+
+    <frame10_11 grid="{'row':'1', 'column':'1'}" grid_propagate='0'>
+        <parent>frame10</parent>
+        <width>500</width>
+        <height>10</height>
+    </frame10_11>
+    <label10_11_0 pack="{'side':'left', 'fill':'both'}" >
+        <parent>frame10_11</parent>
+        <font>Arial 12</font>
+        <width>30   </width>
+        <height>1</height>
+        <text>Введенное количество символов :</text>
+    </label10_11_0>
+    <label10_11_1  pack="{'side':'left', 'fill':'both'}" >
+        <parent>frame10_11</parent>
+        <font>Arial 12</font>
+        <width>2</width>
+        <height>1</height>
+        <text>0</text>
+        <fg>red</fg>
+    </label10_11_1>
+
+    <frame10_21 grid="{'row':'2', 'column':'1'}"  grid_propagate='0'>
+        <parent>frame10</parent>
+        <width>500</width>
+        <height>10</height>
+    </frame10_21>
+    <entry10_21_1 >
+        <parent>frame10_21</parent>
+        <width>25</width>
+        <bd>3</bd>
+        <font>Arial 22</font>
+        <fg>red</fg>
+        <justify>center</justify>
+    </entry10_21_1>
+
+
+    <frame20 grid="{'row':'2', 'column':'0' }" grid_propagate='0'>
+        <parent>root</parent>
+        <width>400</width>
+        <height>500</height>
+    </frame20>
+    <label20_1 pack="{}">
+        <parent>frame20</parent>
+        <font>Arial 12</font>
+        <width>30</width>
+        <height>1</height>
+        <text>Составленные слова:</text>
+    </label20_1>
+    <frame20_2 pack="{}">
+        <parent>frame20</parent>
+        <width>400</width>
+        <height>477</height>
+        <bg>blue</bg>
+    </frame20_2>
+
+
+    <frame21 grid="{'row':'2', 'column':'1' }"  >
+        <parent>root</parent>
+        <width>10</width>
+        <height>500</height>
+    </frame21>
+    <canvas21_1 pack="{}">
+        <parent>frame21</parent>
+    </canvas21_1>
+    <frame21_1_1 pack="{}">
+        <parent>canvas21_1</parent>
+        <width>3</width>
+        <height>500</height>
+    </frame21_1_1>
+
+
+    <frame22 grid="{'row':'2', 'column':'2' }" grid_propagate='0'>
+        <parent>root</parent>
+        <width>290</width>
+        <height>500</height>
+        <bg>green</bg>
+    </frame22>
+
+
+
+</window>

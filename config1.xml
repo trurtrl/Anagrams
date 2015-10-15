@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+    <frame10 grid="{'row':'1', 'column':'0'}" grid_propagate='0'  >
+        <parent>root</parent>
+        <width>900</width>
+        <height>130</height>
+    </frame10>
+    <label10.00 grid="{'row':'0', 'column':'0'}" >
+        <parent>frame10</parent>
+        <font>Arial 12</font>
+        <width>15</width>
+        <height>5</height>
+        <text>Введите cлово</text>
+    </label10.00>
+    <frame10.01 grid="{'row':'0', 'column':'1'}" grid_propagate='0'>
+        <parent>frame10</parent>
+        <width>600</width>
+        <height>60</height>
+    </frame10.01>
+    <entry10.01.1 focus="{}" pack="{}">
+        <parent>frame10.01</parent>
+        <width>40</width>
+        <bd>5</bd>
+        <font>Arial 20</font>
+        <fg>red</fg>
+        <justify>center</justify>
+    </entry10.01.1>
+    <button10.02 grid="{'row':'0', 'column':'2'}">
+        <parent>frame10</parent>
+        <text>Начать</text>
+        <bg>darkgreen</bg>
+    </button10.02>
+
+    <frame10.11 grid="{'row':'1', 'column':'1'}" grid_propagate='1'>
+        <parent>frame10</parent>
+        <width>32</width>
+        <height>1</height>
+    </frame10.11>
+    <label10.00 grid="{'row':'0', 'column':'0'}" >
+        <parent>frame10.11</parent>
+        <font>Arial 12</font>
+        <width>30</width>
+        <height>1</height>
+        <text>Введенное количество символов :</text>
+        <bg>red</bg>
+    </label10.00>
+    <label10.01 grid="{'row':'0', 'column':'1'}" >
+        <parent>frame10.11</parent>
+        <font>Arial 12</font>
+        <width>2</width>
+        <height>1</height>
+        <text>0</text>
+        <bg>yellow</bg>
+    </label10.01>
+
+
+    <frame20 grid="{'row':'2', 'column':'0'}" grid_propagate='1'>
+        <parent>root</parent>
+        <width>600</width>
+        <height>300</height>
+    </frame20>
+    <text20.1 pack="{}">
+        <parent>frame20</parent>
+        <width>60</width>
+        <height>20</height>
+    </text20.1>
+
+    <frame21 grid="{'row':'2', 'column':'1'}" grid_propagate='1' >
+        <parent>root</parent>
+        <width>10</width>
+        <height>300</height>
+    </frame21>
+    <canvas21.1 pack="{}">
+        <parent>frame21</parent>
+    </canvas21.1>
+
+
+
+
+</window>

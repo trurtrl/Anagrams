@@ -13,7 +13,7 @@ class Controller:
 
     def changeWidgets(self):
 #	self.view.
-	self.model.getWord()
+    	self.model.getWord()
 
 
     def startGame(self):
@@ -29,7 +29,9 @@ class Controller:
         pass
 
     def todo(self):
-	print '/////qweqweqwe//////'
+        print '/////qweqweqwe//////'
+
+
 
 
 
