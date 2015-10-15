@@ -1,3 +1,3 @@
 # Anagrams
 My first game
-v0.001 It is first the realization of GUI
+v0.002 It is the first realization of GUI that is based on Classes
