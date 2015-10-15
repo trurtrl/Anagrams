@@ -1,54 +1,101 @@
+#! /usr/bin/python
 # -*- coding: utf-8 -*-
-
 
 import Tkinter as tk
 
-class Model:
-    def __init__(self):
-        self.loadVocabulary()
+
+
+class BaseWindow:
+    def __init__(self, before_start = True):
+	self.before_start = before_start
+	self.root = tk.Tk()
+	self.root.title('-= Anagrams =-')
+
+	self.field1()
+	self.field1_mount()
+	self.field2()
+	self.field2_mount()
+	self.field3()
+	self.field3_mount()
+	self.scroll()
+	self.scroll_mount()
+	self.field4()
+	self.field4_mount()
 
 
 
-	view = View()
-	view.set_start_game_callback()
+	self.root.mainloop()
+
+
+    def field1(self):
+	self.frame1 = tk.Frame(self.root, width = 80, height = 10)
+	self.but11 = tk.Button(self.frame1)
+	self.lab11 = tk.Label (self.frame1, font = 'Arial 14', width = 20, height = 5)
+
+
+	print self.frame1.cget('width')
+
+	self.frame1.grid(row = 0, column = 0)
+	self.field1_dynamic()
+
+    def field1_dynamic(self):
+	if self.before_start:
+	    self.but11.config(text = 'Начать', bg = 'darkgreen')
+	    self.lab11.config( text = 'Введите \n слово')
+	    self.injected_letters = tk.Entry(self.frame1, width = 60, bd = 3, font = 'Arial 14')
+	    self.injected_letters.focus()
+	else:
+	    self.but11.config(text = 'Заново')
+	    self.lab11.config( text = 'Введенное \n слово')
+	    self.injected_letters = tk.Label(self.frame1, width = 60, bd = 3, font = 'Arial 20', fg = 'red')
+#	    self.injected_letters.config( text = self.    )
+
+    def field1_mount(self):
+	self.lab11.grid(row = 0, column = 0, padx = 10)
+	self.injected_letters.grid(row = 0, column = 1, padx = 10)
+	self.but11.grid(row = 0, column = 2, padx = 10)
 
 
 
-    def loadVocabulary(self):
-	self.vocabulary = Utils()
-	self.vocabulary.openFile()
 
 
 
-    def searchWords(self):
-	pass
-
-    def comparison(self):		# compare entered words and founded
-	pass
 
 
-class Utils:
-    def openFile(self, file_name = 'vocabulary'):
-	import codecs
-	self.file_temp = codecs.open(file_name)
-	self.prepare()
-
-    def prepare(self):			# Create list with words from opened file
-	self.dictionary = []
-	for word in self.file_temp.readlines():
-	    word = word.replace('\n','').decode('UTF-8')
-	    self.dictionary.append(word)
-	self.file_temp.close()
-	print self.dictionary[:10]
 
 
-class GetWord:				# get word from widget 'ent'(Entry).From letters of this word will assemble new words.
-    def __init__(self):
-	pass
+    def field2(self):
+	self.frame2 = tk.Frame(self.root, width = 80, height = 10)
+	self.word = tk.Entry(self.frame2, width = self.frame1.cget('width'), font = 'Arial 20')
+    def field2_mount(self):
+	self.frame2.grid(row = 1, column = 0)
+	self.word.pack()
 
-###--------------------------------
-#####			VIEW's part
-###--------------------------------
+    def field3(self):
+	self.frame3 = tk.Frame(self.root, width = 60, height = 50)
+	self.canv3 = tk.Canvas(self.frame3, width = 60, height = 50)
+	self.frame31= tk.Frame(self.canv3 ,width = 60, height = 50)
+    def field3_mount(self):
+	self.frame3.grid(row = 2, column = 0)
+	self.canv3.pack()
+	self.frame31.pack()
+
+    def scroll(self):
+	self.word_scroll = tk.Scrollbar(self.root, command = self.canv3.yview)
+    def scroll_mount(self):
+	self.word_scroll.grid (row = 2, column = 1)
+
+    def field4(self):
+	self.frame4 = tk.Frame(self.root, width = 20, height = 50)
+	self.but41  = tk.Button(self.frame4, text = 'Проверить')
+    def field4_mount(self):
+	self.frame4.grid(row = 2, column = 2)
+	self.but41.pack()
+
+
+
+
+
 
 class View:
     def __init__(self, before_start = False):
@@ -61,6 +108,7 @@ class View:
 	self.frame4 = tk.Frame(self.root, width = 20, height = 50)
 	self.canv1 = tk.Canvas(self.frame3)
 	self.frame5 = tk.Frame(self.canv1)
+
 	self.but1 = tk.Button(self.frame1, text = 'Новая игра', bg = 'grey')
 	self.but2 = tk.Button(self.frame1, text = 'Начать', bg = 'darkgreen')
 	self.lab  = tk.Label (self.frame1, font = 'Arial 14', width = 20, height = 5)
@@ -163,35 +211,6 @@ class Letters:
 	pass
 
 
-###		-------------------------
-#####			CONTROLLER's part
-###		-------------------------
-
-class Controller:
-    def __init__(self):
-	pass
-
-
-    def changeWidgets(self):
-#	self.view.
-	self.model.getWord()
-
-    def todo(self):
-	print '/////qweqweqwe//////'
-
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == '__main__':
-#    root = tk.Tk()
-#    app = Controller()
-    app = Model()
+    bw = BaseWindow()
 
